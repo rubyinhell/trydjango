@@ -108,9 +108,14 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = "/var/www/example.com/static/"
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_in_env", "static_root") #outer
+#STATIC_ROOT = os.path.join(BASE_DIR, "static_in_pro", "static_root") #inner
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "static"),
+    os.path.join(BASE_DIR, "static_in_pro", "our_static"),
     #'/var/www/static/',
 )
+
+# user adapter
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_in_env", "media_root")
