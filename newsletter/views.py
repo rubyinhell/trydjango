@@ -34,11 +34,12 @@ def home(request):
     	    "title": "Thank you"
     	}
 
-    return render(request, "example_fluid.html", context)
+    return render(request, "home.html", context)
 
 
 def contact(request):
     form = ContactForm(request.POST or None)
+    title = "Contact Us"
     if form.is_valid():
     	#print form.cleaned_data
     	form_email = form.cleaned_data.get("email")
@@ -56,5 +57,6 @@ def contact(request):
     	         fail_silently=True)
     context = {
         "form": form,
+        "title": title,
     }
     return render(request, "forms.html", context)

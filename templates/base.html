@@ -1,4 +1,5 @@
 {% load staticfiles %}
+{% load crispy_forms_tags %} 
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -13,11 +14,10 @@
     <title>Static Top Navbar Example for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
-    <!-- <link href="../../dist/css/bootstrap.min.css" rel="stylesheet"> -->
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="http://bootswatch.com/cosmo/bootstrap.min.css" /> -->
     <!-- Custom styles for this template -->
-    <!-- <link href="navbar-static-top.css" rel="stylesheet"> -->
-    <link href="{% static 'navbar-static-top.css' %}" rel="stylesheet">
+    <link href="{% static 'css/navbar-static-top.css' %}" rel="stylesheet">
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <!-- <script src="../../assets/js/ie-emulation-modes-warning.js"></script> -->
@@ -39,11 +39,11 @@
 
       {% block jumbotron %}
       {% endblock %}
+      
       {% block content %}
       {% endblock %}
 
     </div> <!-- /container -->
-
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
